@@ -20,6 +20,11 @@ This project is a part of my education and was a group project in the spring of 
 
 The frontend allows you to maintain the system by adding blacklisted devices based on their MAC address, hostname, and description. You can also configure settings, such as enabling or disabling the program and setting the time intervals for it to run.
 
+# Testing the code in the console application
+[![Watch the video](https://img.youtube.com/vi/nLG5FucuSAk/maxresdefault.jpg)](https://youtu.be/nLG5FucuSAk)
+
+### [Watch this video on YouTube](https://youtu.be/nLG5FucuSAk)
+
 # 🛠️ Technologies and Tools
 - Backend: C# (.NET)
 - Frontend: Vue.js
