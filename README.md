@@ -1,7 +1,7 @@
 # WiFi Light Control
-The WEXO project is an automatic light control system that uses Wi-Fi network to detect presence. When no approved devices are connected to the network, the lights automatically turn off.
+The WEXO project is an automatic light control system that uses Wi-Fi network to detect presence. When no approved devices are connected to the network, the lights automatically turn off. The program runs as a console application.
 
-The system offers a user-friendly interface with features such as:
+The system offers a user-friendly interface for settings and maintance - with features such as:
 - Setting active time periods
 - Device blacklisting
 - Manual system activation/deactivation
