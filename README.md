@@ -15,6 +15,12 @@ The user gets on WiFi and the light turns on. If the user turns off WiFi (or lea
 
 This project is a part of my education and was a group project in the spring of 2025.
 
+# Mockups of the frontend
+<img width="200" alt="Image" src="https://github.com/user-attachments/assets/6a9d8202-8630-4400-8148-4914a8da5205" />
+<img width="650" alt="Image" src="https://github.com/user-attachments/assets/d2f6e12e-b6af-41f2-b8fa-10ca631c213f" />
+
+The frontend allows you to maintain the system by adding blacklisted devices based on their MAC address, hostname, and description. You can also configure settings, such as enabling or disabling the program and setting the time intervals for it to run.
+
 # 🛠️ Technologies and Tools
 - Backend: C# (.NET)
 - Frontend: Vue.js
