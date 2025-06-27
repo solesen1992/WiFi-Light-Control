@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>WEXO_Projekt_API</RootNamespace>
+    <UserSecretsId>71572faf-44ff-432c-b676-4f242ec7835e</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WEXO-Project-BLL\WEXO-Project-BLL.csproj" />
+    <ProjectReference Include="..\WEXO-Projekt-DAL\WEXO-Projekt-DAL.csproj" />
+    <ProjectReference Include="..\WEXO-Test-Sorting-Blacklist\WEXO-Test-Sorting-Blacklist.csproj" />
+  </ItemGroup>
+
+</Project>

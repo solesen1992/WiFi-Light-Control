@@ -1,0 +1,6 @@
+// Fil der anbefaler hvilke udvidelser der skal bruges af andre udviklere i VS Code
+// 'Vue.volar' refererer til Volar-udvidelsen, som giver language support til Vue 3.
+
+{
+  "recommendations": ["Vue.volar"]
+}

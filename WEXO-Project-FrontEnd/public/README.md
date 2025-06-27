@@ -20,10 +20,6 @@ Systemet tilbyder en brugervenlig grænseflade med funktioner som:
 
 ---
 
-## 🚀 Opsætning af database
-1. Sikre jer, at det er den rigtige database der er valgt
-2. Der ligger en mappe under resources med et sql script der skal køres.   
-
 ## 🚀 Installation og opsætning
 
 Følgende guide hjælper dig med at sætte projektet op lokalt. Du skal bruge:
@@ -35,6 +31,7 @@ Følgende guide hjælper dig med at sætte projektet op lokalt. Du skal bruge:
 
 1. Åbn backend-projektet i **Visual Studio**
 2. Sørg for, at forbindelsesstrengen til MSSQL er korrekt sat i `appsettings.json`
+   ```
 3. Kør projektet. 
 ### 2. Konfigurer frontendens baseURL
 
@@ -49,8 +46,7 @@ Gå til `frontend/src/components/icons/baseURLconfig.js` og sæt backendens URL 
 ```bash
 cd [sti-til-frontend]
 npm install
-npm run build
-Dette generer en /dist fil. Deploy /dist til din server
+npm run dev
 ```
 
 Frontend-serveren starter typisk på `http://localhost:5173`
@@ -63,7 +59,6 @@ Frontend-serveren starter typisk på `http://localhost:5173`
    - Vælg aktive tidsrum for lysstyring
    - Tilføj enheder til blacklist
    - Aktivér/deaktivér systemet
-4. Af sikkerheds mæssige hensyn kan CORS ændres til kun at tage inputs fra URL. (anbefalet)
 
 ---
 
@@ -78,19 +73,13 @@ Frontend-serveren starter typisk på `http://localhost:5173`
 
 ## 🔐 Login
 
-Systemet benytter login for at give adgang til konfigurationssiden. Loginoplysninger er givet separet. Vi anbefaler at tømme logindatabasen inden brug, da der således kun er jeres egne brugere.
-Steps to make login.
-1. I hashingtest program cs indsættes det kodeord der ønskes i ""
-2. Kør programmet og det hashede kodeord bliver printet i terminalen
-3. Det hashede kodeord indsættes med det ønskede brugernavn i følgende query "insert into Users (username, password) values ('Navn', 'HashedPassword')"
-4. Kør query i jeres database og jeres login virker nu.
+Systemet benytter login for at give adgang til konfigurationssiden. Loginoplysninger er givet separet 
 
 
 ---
 
 ## 📄 Licens
 
-Dette projekt er udviklet som en del af et internt eller uddannelsesmæssigt projekt.
-https://youtu.be/GkRkfpsmmPg
+Dette projekt er udviklet som en del af et internt eller uddannelsesmæssigt projekt.  
 
 ---

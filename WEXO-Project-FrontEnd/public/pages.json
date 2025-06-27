@@ -1,0 +1,37 @@
+
+[ 
+    {
+      "link": {
+        "text": "MAC Adresser",
+        "component": "macSettingsChoice"
+      },
+      "pageTitle": "MAC adresser Page",
+      "content": "This is the MAC adresser blacklist content"
+    },
+    {
+      "link": {
+        "text": "Host Name",
+        "component": "hostNameSettingsChoice"
+      },
+      "pageTitle": "Host Name Page",
+      "content": "This is the Host Name blacklist content"
+    },
+    {
+      "link": {
+        "text": "Description",
+        "component": "descriptionSettingsChoice"
+      },
+      "pageTitle": "Description Blacklist Page",
+      "content": "This is the description blacklist content"
+    },  
+    {
+      "link": {
+        "text": "Settings",
+        "component": "lightSettings"
+      },
+      "pageTitle": "Setting page",
+      "content": "this is the setting page content"
+
+    }
+    
+  ]
