@@ -1,96 +1,94 @@
-# WEXO – Automatisk Lysstyring via Wi-Fi
+# WiFi Light Control
+The WEXO project is an automatic light control system that uses Wi-Fi network to detect presence. When no approved devices are connected to the network, the lights automatically turn off. The program runs as a console application.
 
-WEXO-projektet er et automatisk lysstyringssystem, der bruger WEXOs Wi-Fi-netværk til at registrere tilstedeværelse. Når ingen godkendte enheder er forbundet til netværket, slukker lyset automatisk.  
-Systemet tilbyder en brugervenlig grænseflade med funktioner som:
+The system offers a user-friendly interface for settings and maintance - with features such as:
+- Setting active time periods
+- Device blacklisting
+- Manual system activation/deactivation
+- Login system for access control
 
-- Opsætning af aktive tidsrum
-- Blacklisting af enheder
-- Manuel aktivering/deaktivering af systemet
-- Login-system til adgangskontrol
+An animation that shows how the system works:
 
----
+![Image](https://github.com/user-attachments/assets/b6edb2fa-6ab5-4941-9f04-b9232f648de1)
 
-## 🛠️ Teknologier og værktøjer
+The user gets on WiFi and the light turns on. If the user turns off WiFi (or leave the workplace) the light turns off.
 
-- **Backend:** C# (.NET)
-- **Frontend:** Vue.js
-- **Database:** Microsoft SQL Server (MSSQL)
-- **Sprog:** JavaScript, C#
-- **IDE:** Visual Studio & Visual Studio Code
+This project is a part of my education and was a group project in the spring of 2025.
 
----
+# Mockups of the frontend
+<img width="700" alt="Image" src="https://github.com/user-attachments/assets/57daa4be-7543-4442-ba46-93def15aa702" />
 
-## 🚀 Opsætning af database
-1. Sikre jer, at det er den rigtige database der er valgt
-2. Der ligger en mappe under resources med et sql script der skal køres.   
+The frontend allows you to maintain the system by adding blacklisted devices based on their MAC address, hostname, and description. You can also configure settings, such as enabling or disabling the program and setting the time intervals for it to run.
 
-## 🚀 Installation og opsætning
+# Testing the code in the console application
+[![Watch the video](https://img.youtube.com/vi/nLG5FucuSAk/maxresdefault.jpg)](https://youtu.be/nLG5FucuSAk)
 
-Følgende guide hjælper dig med at sætte projektet op lokalt. Du skal bruge:
-- Visual Studio (til backend)
-- Node.js + npm (til frontend)
-- SQL Server (til databasen)
+### [Watch this video on YouTube](https://youtu.be/nLG5FucuSAk)
 
-### 1. Start backend
+# 🛠️ Technologies and Tools
+- Backend: C# (.NET)
+- Frontend: Vue.js
+- Database: Microsoft SQL Server (MSSQL)
+- Languages: JavaScript, C#
+- IDE: Visual Studio & Visual Studio Code
 
-1. Åbn backend-projektet i **Visual Studio**
-2. Sørg for, at forbindelsesstrengen til MSSQL er korrekt sat i `appsettings.json`
-3. Kør projektet. 
-### 2. Konfigurer frontendens baseURL
+# How to run the code
+## 🚀 Database Setup
+- Ensure the correct database is selected
+- A folder under resources contains an SQL script that needs to be executed
 
-Gå til `frontend/src/components/icons/baseURLconfig.js` og sæt backendens URL korrekt:
+## 🚀 Installation and Setup
+This guide helps you set up the project locally. You’ll need:
+- Visual Studio (for the backend)
+- Node.js + npm (for the frontend)
+- SQL Server (for the database)
 
-> Hvis systemet skal hostes, kan dette ændres til et domæne.
+1. Start the Backend
+- Open the backend project in Visual Studio
+- Make sure the connection string to MSSQL is correctly configured in appsettings.json
+- Also configure your WiFi API and Philips Hue Lights in appsettings.json
+- Run the project
 
-### 3. Kør frontend
+2. Configure the Frontend baseURL
+- Navigate to frontend/src/components/icons/baseURLconfig.js and set the correct backend URL.
+- If the system is hosted, you can replace this with a domain
 
-Åbn terminalen (eller kommandoprompt), og navigér til frontend-mappen:
-
-```bash
-cd [sti-til-frontend]
+3. Run the Frontend
+- Open a terminal (or command prompt) and navigate to the frontend folder:
+``
+cd [path-to-frontend]
 npm install
 npm run build
-Dette generer en /dist fil. Deploy /dist til din server
-```
+This will generate a /dist folder. Deploy /dist to your server.
+`` 
 
-Frontend-serveren starter typisk på `http://localhost:5173`
+- This will generate a /dist folder. Deploy /dist to your server.
+- The frontend server typically starts at http://localhost:5173
 
-### 4. Log ind og konfigurer systemet
+4. Log In and Configure the System
+- Open the web interface in your browser
+- Log in with a valid user (you can create one through the backend)
+- Configure the system as needed:
+- Set active time periods for light control
+- Add devices to the blacklist
+- Enable/disable the system
+- For security reasons, CORS can be configured to only accept input from a specific URL (recommended)
 
-1. Åbn webinterfacet i din browser
-2. Log ind med en gyldig bruger (loginoplysninger udleveres separat)
-3. Konfigurer systemet efter dine behov:
-   - Vælg aktive tidsrum for lysstyring
-   - Tilføj enheder til blacklist
-   - Aktivér/deaktivér systemet
-4. Af sikkerheds mæssige hensyn kan CORS ændres til kun at tage inputs fra URL. (anbefalet)
-
----
-
-## 📋 Krav
-
-- .NET SDK (til backend)
-- Node.js og npm (til frontend)
+📋 Requirements
+- .NET SDK (for backend)
+- Node.js and npm (for frontend)
 - Microsoft SQL Server
-- Adgang til WEXO Wi-Fi (eller simuleret netværkstilstand)
+- Access to Wi-Fi (or simulated network mode)
+- Philips Hue Lights
 
----
+🔐 Login
+- The system uses a login to access the configuration page. We recommend clearing the login database before use to ensure only your own users exist.
 
-## 🔐 Login
-
-Systemet benytter login for at give adgang til konfigurationssiden. Loginoplysninger er givet separet. Vi anbefaler at tømme logindatabasen inden brug, da der således kun er jeres egne brugere.
-Steps to make login.
-1. I hashingtest program cs indsættes det kodeord der ønskes i ""
-2. Kør programmet og det hashede kodeord bliver printet i terminalen
-3. Det hashede kodeord indsættes med det ønskede brugernavn i følgende query "insert into Users (username, password) values ('Navn', 'HashedPassword')"
-4. Kør query i jeres database og jeres login virker nu.
-
-
----
-
-## 📄 Licens
-
-Dette projekt er udviklet som en del af et internt eller uddannelsesmæssigt projekt.
-https://youtu.be/GkRkfpsmmPg
-
----
+Steps to create a login:
+- In the HashingTest.cs program, insert your desired password inside ""
+- Run the program; the hashed password will be printed in the terminal
+- Insert the hashed password and your desired username using this query:
+``
+"INSERT INTO Users (username, password) VALUES ('YourName', 'HashedPassword')"
+``
+- Run the query in your database — your login should now work
